@@ -1,5 +1,4 @@
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -8,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
-public class test extends JFrame implements MouseMotionListener {
+public class test extends JFrame implements MouseMotionListener, MouseListener {
     int x1,y1,x,y;
     private boolean first = true;
     public test() {
@@ -18,7 +17,13 @@ public class test extends JFrame implements MouseMotionListener {
         setVisible(true);
         setBackground(Color.white);
         addMouseMotionListener(this);
+        addMouseListener(this);
     }
+
+/*    @Override
+    public boolean mouseDown(Event evt, int x, int y) {
+        return super.mouseDown(evt, x, y);
+    }*/
 
     @Override
     public void mouseDragged(MouseEvent e) {
@@ -34,6 +39,8 @@ public class test extends JFrame implements MouseMotionListener {
     }
 
 
+
+
     @Override
     public void mouseMoved(MouseEvent e) {
 
@@ -45,5 +52,31 @@ public class test extends JFrame implements MouseMotionListener {
 
     public static void main(String[] args) {
         new test();
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        System.out.println("hello");
+        first = true;
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
     }
 }

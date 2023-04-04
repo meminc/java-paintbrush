@@ -6,6 +6,7 @@ public class Frame extends JFrame {
     public Frame() {
         setSize(720, 720);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBackground(Color.GRAY);
 
         setLayout(new FlowLayout());
         //setBounds(10, 10, 10, 10);
@@ -20,6 +21,9 @@ public class Frame extends JFrame {
         add(actionSelectionPanel);
         add(drawPanel);
 
+
+
         setVisible(true);
     }
+
 }

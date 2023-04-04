@@ -16,7 +16,7 @@ public class ColorSelectionPanel extends JPanel {
     }
     public ColorSelectionPanel() {
 
-        setPreferredSize(new Dimension(720, 50));
+        setPreferredSize(new Dimension(720, 70));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
         //setBorder(BorderFactory.createEmptyBorder());
