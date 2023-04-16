@@ -1,14 +1,30 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ActionSelectionPanel extends JPanel{
 
-    private class ActionSelectionButton extends JButton {
-        public ActionSelectionButton(String btnName) {
-            super(btnName);
-            setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        }
+    JButton btnRectangle;
+    JButton btnEllipse;
+    JButton btnPencil;
+    JButton btnDrag;
+
+    public JButton getBtnDrag() {
+        return btnDrag;
+    }
+
+    public JButton getBtnEllipse() {
+        return btnEllipse;
+    }
+
+    public JButton getBtnPencil() {
+        return btnPencil;
+    }
+
+    public JButton getBtnRectangle() {
+        return btnRectangle;
     }
 
     public ActionSelectionPanel() {
@@ -23,15 +39,19 @@ public class ActionSelectionPanel extends JPanel{
 
         String[] btnStrs = new String[]{"Dikdortgen Ciz", "Oval Ciz", "Kalemle Ciz", "Tasi"};
 
-        for (String str: btnStrs) {
-            add(createButton(str));
-        }
-    }
+        btnRectangle = new JButton("Dikdortgen Ciz");
+        btnEllipse = new JButton("Oval Ciz");
+        btnPencil = new JButton("Kalemle Ciz");
+        btnDrag = new JButton("Tasi - calismiyor");
 
-    private ActionSelectionButton createButton(String str) {
-        ActionSelectionButton asc = new ActionSelectionButton(str);
-        asc.setPreferredSize(new Dimension(120, 50));
-        // asc.setBounds(20, 20, 50, 20);
-        return asc;
+        btnRectangle.setPreferredSize(new Dimension(120, 50));
+        btnEllipse.setPreferredSize(new Dimension(120, 50));
+        btnPencil.setPreferredSize(new Dimension(120, 50));
+        btnDrag.setPreferredSize(new Dimension(120, 50));
+
+        add(btnRectangle);
+        add(btnEllipse);
+        add(btnPencil);
+        add(btnDrag);
     }
 }
